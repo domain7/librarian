@@ -1,0 +1,7 @@
+title: Librarian class reference
+source: includes
+destination: docs
+templateTheme: bootstrap
+todo: true
+internal: true
+accessLevels: [public, protected, private]

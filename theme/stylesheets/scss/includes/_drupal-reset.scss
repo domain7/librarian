@@ -1,0 +1,48 @@
+// This file is a work in progress. Let's keep building on it as we find items to be reset.
+
+.field-collection-view {
+	border: 0;
+	padding: 0;
+	margin: 0;
+} // .field-collection-view
+.field-collection-container {
+	border: 0;
+	margin: 0;
+} // .field-collection-container
+.field-collection-container .field-items .field-item {
+	margin: 0;
+}
+
+ul {
+	li.expanded,
+	li.collapsed,
+	li.leaf,
+	&.menu li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	} // li.leaf
+} // ul
+
+.item-list ul {
+	margin: 0;
+		li {
+			margin: 0;
+		}
+}
+
+tr {
+	&.odd,
+	&.even {
+		background-color: transparent;
+		border: 0;
+	} // odd, even
+} // tr
+
+.views-exposed-form .views-exposed-widget .form-submit {
+	margin-top: 0;
+}
+
+.item-list ul li {
+	margin: 0;
+}

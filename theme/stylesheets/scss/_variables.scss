@@ -1,0 +1,115 @@
+/* Variables
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+
+/*
+
+	THESE ARE JUST DEFAULTS and should be changed to suit the needs of your project.
+
+	Note:
+		+ Mixin names should describe what things ARE, not what they look like.
+		+ As much as it kills me, colour is spelled the American way to be consistant
+		  with colour declarations in css.
+
+	For example, the following are good variable names:
+	$font-base, $font-header, $color-brand, $color-accent, $breakpoint-midsize, $breakpoint-small
+
+	These are bad variable names:
+	$blue, $orange, $helvetica, $ipad, $iphone
+
+	On naming conventions, a good convention is to use underscores for spaces, and dashes to indicate
+	a subsidiary relationship. All punctuation is meaningful, and this allows you to easily group
+	variables by type.
+
+	The following are good examples of variable groups named with a dash to indicate descendency:
+
+	$font-x
+	$font-weight-x
+	$color-x
+	$icon-x
+	$breakpoint-x
+
+*/
+
+
+/* The following variables are needed by some of our mixins and can be adjust to meet
+   the needs of the site.
+*/
+
+// Fonts
+$font-default_stack-serif: "Times New Roman", Times, serif;
+$font-default_stack-sans_serif: "Helvetica Neue", Arial, sans-serif;
+$font-icon: 'FontAwesome' !default;
+// Create your $font-base like this: 👇 'proxima-nova' is an example
+$font-base: 'Open Sans', $font-default_stack-sans_serif;
+$font-mono: 'Droid Sans Mono', 'Courier New', monospace;
+
+// Font weights
+// Note that these are essential for the font_weight mixin in _mixins.scss
+$font-weight-light: 100;
+$font-weight-medium: 400;
+$font-weight-normal: $font-weight-medium; // Basically an alias, for convenience
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// Font sizes
+$font-size-body: 14;
+
+// Colours
+// These are just defaults. You're going to want to go ahead and change them.
+$color-base: #333; // the colour of most body text
+$color-brand: #e44053; // the main brand colour, probably the main logo colour
+$color-brand-accent: #1d988a; // the brand accent colour might also be used in the logo, or generally as an accent
+$color-canvas: #fff; // this is probably the background colour of the body element
+$color-canvas-alt: #ebedec; // an alternate canvas colour. If needed define a $color-base-alt for copy ont this
+$color-keyline: #d7d7d7; // line dividers
+$color-keyline-alt: lighten($color-keyline, 7%);
+
+// Grid columns
+$grid-cols-full: 12;
+//$grid-cols-medium: 8;
+$grid-cols-small: 6;
+$grid-gutter: 20px;
+$grid-gutter-half: $grid-gutter / 2;
+$grid-full: 1280px;
+
+// Breakpoints
+$breakpoint-full: 1400px;
+$breakpoint-large: 1200px;
+$breakpoint-no-mediaqueries: 1020px;
+$breakpoint-mid: 820px;
+$breakpoint-small: 600px;
+$breakpoint-smaller: 420px; // 👽
+
+// Social icons
+$social_sites: (
+	facebook: $icon-facebook,
+	twitter: $icon-twitter,
+	google_plus: $icon-google-plus,
+	linkedin: $icon-linkedin,
+	pinterest: $icon-pinterest,
+	flickr: $icon-flickr,
+	instagram: $icon-instagram,
+	youtube: $icon-youtube,
+	vimeo: $icon-vimeo-square,
+);
+
+$social_sites-square: (
+	facebook: $icon-facebook-square,
+	twitter: $icon-twitter-square,
+	google_plus: $icon-google-plus-square,
+	linkedin: $icon-linkedin-square,
+	pinterest: $icon-pinterest-square,
+	flickr: $icon-flickr,
+	instagram: $icon-instagram,
+	youtube: $icon-youtube-square,
+	vimeo: $icon-vimeo-square,
+);
+
+// Tool icons
+$tool_icons: (
+	focus: $icon-crosshairs,
+	link: $icon-anchor,
+	download: $icon-download,
+	toggle: $icon-toggle-up,
+	raw: $icon-file-code-o
+);

@@ -1,0 +1,11 @@
+.example {
+	background: #ebedec;
+	padding: 2em;
+	&__title {
+		margin-top: 0;
+	} // &-title
+	&--reversed {
+		background: #333;
+		color: #fff;
+	} // &--reversed
+} // .example

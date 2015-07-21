@@ -1,0 +1,10 @@
+.menubar {
+	background: $color-brand;
+	color: $color-canvas;
+	width: 100%;
+	padding: 3.5em 0;
+	margin-bottom: 2em;
+	&-title {
+		font-weight: 300;
+	} // &-title
+} // jumbotron

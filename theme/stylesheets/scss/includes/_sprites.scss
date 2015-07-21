@@ -1,0 +1,38 @@
+/*
+  For further instructions on use, see readme.md or screen.scss
+  
+*/
+
+// https://gist.github.com/2878758
+
+$sprites: sprite-map("sprites/common-1x/*.png", $layout: smart);
+$sprites-retina: sprite-map("sprites/common-2x/*.png", $layout: smart);
+
+@mixin sprite-background($name) {
+  background-image: sprite-url($sprites);
+  background-position: sprite-position($sprites, $name);
+  background-repeat: no-repeat;
+  display: block;
+  height: image-height(sprite-file($sprites, $name));
+  width: image-width(sprite-file($sprites, $name));
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 2) {
+    // Workaround for https://gist.github.com/2140082
+    @if (sprite-position($sprites, $name) != sprite-position($sprites-retina, $name)) {
+      $xpos: round(nth(sprite-position($sprites-retina, $name), 1) / 2);
+      $ypos: round(nth(sprite-position($sprites-retina, $name), 2) / 2);
+      background-position: $xpos $ypos;
+    }
+    // Grab size of non-retina sprite image.
+    @include background-size(image-width(sprite-path($sprites)) image-height(sprite-path($sprites)));
+    background-image: sprite-url($sprites-retina);
+  }
+}
+
+
+/* Compatibility sprites. Uncomment to use.
+
+  $compatibility-layout: smart;
+  @import "compatibility/*.png";
+  @include all-compatibility-sprites;
+
+*/

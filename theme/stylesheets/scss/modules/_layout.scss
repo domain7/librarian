@@ -1,0 +1,11 @@
+.lib_nav {
+	@include span(2 last);
+} // .lib_nav
+
+.lib_modules {
+	@include span(10 first);
+}
+
+.l-main {
+	position: relative;
+} // .l-main

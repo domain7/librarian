@@ -1,0 +1,33 @@
+html {
+	@include border-box-sizing;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
+}
+
+*, *:after, *:before {
+	@include box-sizing(inherit);
+}
+
+body {
+	font-family: $font-base;
+	color: $color-base;
+}
+
+p, ul, ol {
+	&:first-of-type {
+		margin-top: 0; // This is because of normalize. If you Meyer you have it anyway.
+	}
+	&:last-of-type {
+		margin-bottom: 0; // This is because of normalize. If you Meyer you have it anyway.
+	}
+}
+
+pre,
+code {
+	font-family: $font-mono;
+}
+
+a {
+	@include hover_focus_underline;
+	color: $color-brand;
+} // a

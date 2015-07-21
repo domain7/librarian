@@ -1,0 +1,40 @@
+.lib_checkbox {
+	visibility: hidden;
+	&:active + label,
+	&:focus + label {
+		border-color: darken($color-keyline, 20%);
+	} // &:active + label
+	&:checked + label {
+		&:after {
+			color: $color-base;
+		} // &:after
+	} // &:active + label
+	&-label {
+		@include transition(border .1s ease-in-out);
+		display: block;
+		width: 15px;
+		height: 15px;
+		border: 1px solid $color-keyline;
+		position: absolute;
+		top: 5px;
+		left: 0;
+		&:after {
+			@include transition(color .1s ease-in-out);
+			@extend %icon_font;
+			content: $icon-check;
+			position: absolute;
+			top: -3px;
+			right: -5px;
+			color: transparent;
+		} // &:after
+	} // &-label
+} // .lib_checkbox
+
+.lib_button {
+	background: none;
+	border: 1px solid $color-keyline;
+	padding: 8px 10px;
+	.fa {
+		margin: 0 5px;
+	}
+} // .lib_button

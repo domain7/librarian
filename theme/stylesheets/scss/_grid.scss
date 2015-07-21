@@ -1,0 +1,30 @@
+$base-line-height: null;
+$susy: (
+	columns: $grid-cols-full,
+	gutter-position: inside-static,
+	global-box-sizing: border-box,
+	column-width: 70px,
+	gutters: 20px/70px,
+	output: float,
+	debug: (
+		image: show,
+		output: overlay,
+		toggle: bottom left,
+	),
+);
+
+.container {
+	@include container();
+	@include bleed(0 gutter());
+	max-width: $grid-full + (gutter() * 2);
+	margin: 0 auto;
+	position: relative;
+	.no-mediaqueries & {
+		min-width: $breakpoint-no-mediaqueries;
+		padding: 0 5px;
+	}
+	@media (max-width: $breakpoint-small) {
+  		@include container($grid-cols-small);
+ 		max-width: $breakpoint-small;
+  	}
+} // .container

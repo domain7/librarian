@@ -1,0 +1,102 @@
+/* 
+  Default styles
+  
+  Since we're using the Meyer reset, we need to put default styles back in for wysiwyg areas.
+
+*/
+
+@mixin default_styles {
+	strong {
+		@include font_weight(bold);
+	} // strong
+	em {
+		font-style: italic;
+	} // em
+	a {
+		@include hover_focus_underline;
+		color: $color-brand;
+	}
+	sup, sub {
+		font-size: smaller;
+	}
+	sup {
+		vertical-align: super;
+	}
+	sub {
+		vertical-align: sub;
+	}
+	p, ol, ul {
+		margin-bottom: 1em;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	} // p, ol, ul
+	h2 {
+		font-size: 22px;
+	} // h2
+	h3, h4 {
+		font-size: 18px;
+	} // h3
+	h3 {
+		text-transform: uppercase;
+	} // h3
+	h5, h6 {
+		font-size: 16px;
+	} // h5, h6
+	h5 {
+		text-transform: uppercase;
+	} // h5
+	li {
+		margin-left: 2em;
+	} // li
+	ul li {
+		list-style: disc outside;
+	} // ul li
+	ol li {
+		list-style: decimal outside;
+	} // ol li
+	blockquote {
+		font-size: 1.25em;
+		line-height: 1.6em;
+		font-style: italic;
+		margin: 2em 5em;
+		border-bottom: 2px solid $color-brand;
+	} // blockquote
+	img {
+		max-width: 100%;
+		height: auto;
+	} // img, iframe
+	.alignleft {
+		float: left;
+		margin: 5px 15px 5px 0;
+	} // .alignleft
+	.aligncenter {
+		display: block;
+		margin: 10px auto;
+	}
+	.alignright {
+		float: right;
+		margin: 5px 0 5px 15px;
+	}
+	.alignnone {
+		display: block;
+		margin: 5px 0;
+	} // .alignnone
+	.gallery {
+		overflow: hidden;
+		.gallery-item {
+			width: 0.166666667%;
+			margin: 0 0 2%;
+			a {
+				display: block;
+				img {
+					display: block;
+				} // img
+			} // a
+		} // .gallery-item
+	} // .gallery
+} // default_styles
+
+.wysiwyg {
+	@include default_styles;
+}

@@ -1,0 +1,153 @@
+.lib_module {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px dashed $color-keyline;
+	&:last-of-type {
+		border-bottom: 0;
+	} // &:last-of-type
+	&-class {
+		display: inline-block;
+		font-family: $font-mono;
+		background: $color-canvas-alt;
+		font-weight: normal;
+		font-size: 13px;
+		padding: 5px 10px;
+		position: relative;
+		top: -2px;
+		margin-left: 5px;
+		&-subordinate {
+			opacity: .5;
+		} // &-subordinate
+	} // &-class
+	&-title {
+		float: left;
+	} // &-title
+	&-header {
+		clear: both;
+		overflow: hidden;
+		.lib_tools {
+			float: left;
+			border-top: 1px solid $color-keyline-alt;
+			border-right: 1px solid $color-keyline-alt;
+			position: relative;
+			top: 18px;
+			left: 20px;
+		} // .lib_tools
+	} // &-header
+	&-body {
+		overflow: hidden;
+	} // &-body
+	&-rendered {
+		@include transition(border .3s ease-in-out);
+		border: 1px solid lighten($color-keyline, 7%);
+		padding: 20px;
+		margin-bottom: 20px;
+		position: relative;
+		overflow: hidden;
+		&:focus {
+			outline: 0;
+			border: 1px solid $color-brand;
+		} // &:focus
+		.lib_tools {
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: rgba(255, 255, 255, .5);
+			z-index: 1;
+		} // .lib_tools
+	} // &-rendered
+	&-documentation {
+		margin-bottom: 2em;
+		code {
+			font-size: 12px;
+			background: $color-canvas-alt;
+			padding: 3px 5px;
+		} // code
+	} // &-documentation
+	&-sources {
+		border: 1px solid $color-keyline;
+		overflow: hidden;
+		margin: 20px 0;
+	} // &-sources
+	&-source {
+		border-right: 1px solid $color-keyline;
+		float: left;
+		padding: 10px;
+		position: relative;
+		&:last-of-type {
+			border-right: 0;
+		} // &:last-of-type
+		@for $i from 1 through 6 {
+			.has-sources-#{$i} & {
+				$num: $i - 1;
+				$width: 100%/$num;
+				width: $width;
+			}
+		}
+		.lib_tools {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		&--html {
+			border-bottom: 1px solid #d7d7d7;
+			border-right: 0;
+			.lib_module & {
+				width: 100%;
+				float: none;
+				clear: both;
+			} // .lib_module
+		} // &--html
+		&-code {
+			font-size: 12px;
+			line-height: 1.5em;
+			pre {
+				tab-size: 2;
+				margin: 0;
+			}
+		} // &-code
+		&-language {
+			margin-top: .5em;
+		} // &-language
+	} // &-source
+	&-variants {
+		margin-bottom: 2em;
+	} // &-variants
+	&-variant {
+		&-title {
+			font-family: $font-mono;
+			margin: 0 0 5px;
+		} // &-title
+	} // &-variant
+	&-attachments {
+		margin-bottom: 20px;
+		&-title {
+			margin-bottom: .6em;
+		} // &-title
+		&-items {
+			@include no_list;
+			padding: 0;
+			margin: 0;
+		} // &-scripts
+		&-item {
+			margin: 3px 0;
+			&:before {
+				@extend %icon_font;
+				content: $icon-file-o;
+				margin-right: .75em;
+				color: darken($color-keyline, 10%);
+			}
+			&.lib_module-attachments-item--script:before {
+				content: $icon-file-code-o;
+			} // &.lib_module-attachments-item--script
+			&.lib_module-attachments-item--zip:before {
+				content: $icon-file-archive-o;
+			} // &.lib_module-attachments-item--script
+			&.lib_module-attachments-item--pdf:before {
+				content: $icon-file-pdf-o;
+			} // &.lib_module-attachments-item--script
+		} // &-script
+	} // &-dependencies
+} // .lib_module

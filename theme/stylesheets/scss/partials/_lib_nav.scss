@@ -1,0 +1,29 @@
+.lib_nav {
+	&-list {
+		@include no_list;
+		padding: 0;
+		&-item {
+			border-bottom: 1px solid $color-keyline;
+			padding-bottom: .5em;
+			margin-bottom: .5em;
+			position: relative;
+			padding-left: .75em;
+			&:last-of-type {
+				border-bottom: 0;
+				margin-bottom: 0;
+			} // &:last-of-type
+		} // &-item
+	} // &-list
+	&-download {
+		@include transition(color .15s ease-in-out);
+		display: block;
+		width: 100%;
+		font-size: 14px;
+		margin: 10px 0;
+		color: rgba($color-base, .5);
+		&:hover,
+		&:focus {
+			color: $color-base;
+		} // &:hover, &:focus
+	} // &-download
+} // .lib_nav

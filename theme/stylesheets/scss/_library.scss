@@ -1,0 +1,162 @@
+/*
+	SASS & COMPASS BOILERPLATE
+	For documentation and more information on SASS and Compass, refer to the official documentation:
+		+ SASS: http://sass-lang.com
+		+ Compass: http://compass-style.org
+
+	This file acts as an asset manager and loads the following:
+		+ Compass files
+		+ Libraries
+		+ Variables (fonts, colours, etc)
+		+ Mixins (reusable styles)
+		+ Modules (larger, self-contained, reusable units)
+		+ Partials (parts of styling broken off for maintainability)
+		+ A top-down stylesheet
+
+	Note that files are included in order of necessity. For example, Compass CSS stuff can be used in
+	variables which can be used in mixins, modules, site styles, etc.
+
+	What about media queries?
+	Note that since SASS allows you to nest @media declarations, separate stylesheets containing
+	media queries are unnecessary. Nesting @media declarations also reinforces a modular approach.
+
+*/
+
+
+
+/*
+	Imported modules from Compass
+*/
+
+// Config variables for Compass
+@import "compass-config";
+
+// The global reset, based on Eric Meyer's reset
+//@import "compass/reset";
+
+// Normalize.css makes browsers render all elements more consistently and in
+// line with modern standards. It precisely targets only the styles that need normalizing.
+@import "includes/normalize";
+
+// Optional reset for Drupal
+// @import "includes/drupal-reset";
+
+// SASS mixins for CSS3 properties.
+// For documentation, visit: http://compass-style.org/reference/compass/css3/
+@import "compass";
+
+
+
+/*
+  Fonts
+
+  Any @font-face or third party font imports should go in this file
+
+*/
+
+@import "fonts";
+
+/*
+  Font awesome
+*/
+
+@import "includes/fontawesome";
+
+
+/*
+	Libraries, variables, sprites, and mixins
+
+	An example of a SASS library is http://github.com/nathanshubert/Unicode-Shapes-Preprocessor-Library.
+	They should be prefixed with an underscore, stored in the includes directory,
+	and are included like such:
+	@import "includes/library-name";
+
+	Variables and mixins are also included here.
+
+*/
+
+@import "variables";
+@import "mixins";
+@import "grid";
+@import "includes/prism";
+
+
+/*
+	Sprites
+  To use compass's sprite generating awesomeness, uncomment the include following this
+  comment block.
+
+  _sprites.scss contains two items:
+    - A sprite-background mixin for sprites with a high pixel density counterpart
+    - A template to use vanilla compass sprites for compatibility
+
+  To use the sprite-background mixin, you'll need two images of the same name, one in the
+  images/sprites/common-1x and one in the images/sprites/common-2x directories. The mixin will automatically
+  use the right one.
+
+  The template for vanilla compass sprites for compatibility is intended to be used for
+  older broser support. Think rounded corners and such things.
+
+*/
+// @import "includes/sprites";
+
+
+
+/*
+  Base styles
+  This file should be very minimal and only containe the very basic styles.  If this file gets
+  too large, you you probably need to break things out into modules or partials.
+
+*/
+
+@import "base";
+
+
+
+/*
+	Modules
+	Self contained pieces of styling that can be reused.
+	Modules should have the following characteristics:
+		+ Be context independent so they can be used anywhere.
+		+ Defined within a mixin so that they can be used easily, anywhere.
+		+ Be applied to a class that describes what the element IS, not what it looks like.
+		+ Contain their own variations, fallbacks, and possibly media queries
+
+	Buttons are a good example of a module.
+
+	Module files should be prefixed with an underscore, stored in the modules directory,
+	and included like such:
+	@import "modules/module-name";
+
+  Some default modules are provided bellow. Uncomment them to use them.
+
+*/
+
+// @import "modules/default-styles";
+
+/*
+  Drupal reset.
+  This resets a lot of default Drupal css.
+  NOTE: This file only exists in the drupal branch.
+
+*/
+
+@import "modules/menubar",
+		"modules/layout",
+		"modules/lib_module",
+		"modules/lib_tools",
+		"modules/lib-forms";
+
+
+
+/*
+	Partials
+	Pieces of code that aren't modular in nature, but are broken off for easier maintainability.
+
+	Partials should be prefixed with an underscore, stored in the partials directory,
+	and included as such:
+	@import "partials/partial-name";
+
+*/
+
+@import "partials/lib_nav";
