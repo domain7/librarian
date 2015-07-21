@@ -5,6 +5,9 @@ This tool is designed to be used for creating reusable UI libraries to be used a
 
 Librarian libraries are self hosted and don't require a database.
 
+## Live example
+Checkout a [live example of Librarian in action](http://library.domain7.com).
+
 ## Setup
 Make sure you have the required dependencies installed. Configure `library.json` as needed (details bellow), and create modules according to the `Authoring modules` section.
 
@@ -45,7 +48,7 @@ Library configuration happens in `library.json`, which is **required**.
 Librarian becomes more useful as the number of modules contained grows. Authoring modules is easy but there is a specific format.
 
 ### File naming
-To create a modue, create a new directory inside `/modules` named with your module's name. For instance `/modules/social` could be a directory. All modules must have a `.php` file for markup, and an `.scss` file for sass. Additionally you can add a `.js` file and a `.md` markdown file with documentation. All files need to match the directory's name.
+To create a module, create a new directory inside `/modules` named with your module's name. For instance `/modules/social` could be a directory. All modules must have a `.php` file for markup, and an `.scss` file for sass. Additionally you can add a `.js` file and a `.md` markdown file with documentation. All files need to match the directory's name.
 
 SCSS files should be prefixed with an underscore, for example, `_module.scss`.
 
@@ -88,7 +91,10 @@ UI modules are self contained pieces of code to create UI elements. As such, a f
 * **Self exucting JavaScript**  - All JavaScript modules need to be [self executing](http://markdalgleish.com/2011/03/self-executing-anonymous-functions/)
 * **SCSS BEM** - All `.scss` modules need to be contained in a class. At Domain7 [we use BEM](http://domain7.github.io/dev-wiki/css/#bem-+-smacss-prefixes). Since `.scss` for all modules is loaded on the page, proper encapsulation is required, which BEM encourages. BEM also provides the benefit of your code being more self documenting. Class names like `.square` or `.large`reek havoc on an organized stylesheet.
 
-## Theme template methods
+## Theme
+Presentation of the library itself – the container for modules, if you will - is contained in the `/theme` directory. This can be edited directly. Note that a better theme system is noted in the roadmap.
+
+### Theme template methods
 Several methods and properties are available for the theme layer.
 
 * `$Librarian->title ` (property) Title of the library, set in `library.json`
@@ -98,7 +104,7 @@ Several methods and properties are available for the theme layer.
 * `$Librarian->the_library()` (method) Prints the UI library modules
 * `$Librarian->template_path` (property) Path to the theme
 
-### Scripts
+## Scripts
 Scripts are printed in the theme using `$Librarian->the_scripts();`. Librarian finds all of the js files in your modules, aggregates them and prints them at the bottom of the document, after printing jQuery.
 
 **Librarian includes jQuery in the library automatically**. Don't include jQuery manually in the theme.
