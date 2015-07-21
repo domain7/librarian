@@ -16,7 +16,7 @@ The following extensions are also used:
 * susy: [http://susy.oddbird.net/](http://susy.oddbird.net/)
 
 ### Compass watch/compile
-`cd` into your project directory and run `compass watch` or `compass compile` from the root directory. Compass will watch `.scss` files in your `/modules` and `/theme` directories.
+Clone this repo into a directory on your server. `cd` into your project directory and run `compass watch` or `compass compile` from the root directory. Compass will watch `.scss` files in your `/modules` and `/theme` directories.
 
 ### library.json
 Library configuration happens in `library.json`, which is **required**.
